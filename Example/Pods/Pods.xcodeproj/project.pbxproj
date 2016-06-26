@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F56F7242CC7152E1D59527BAA471ADC /* LoadingButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 430677A5C7DE13D8CB49420122851F69 /* LoadingButton-dummy.m */; };
 		30A61E81593823D352CFC3D14DF807CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		39364C4951B2E83A9A02CDDF54415CB3 /* Pods-LoadingButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 906910E79CE399AB364C7CFE03491977 /* Pods-LoadingButton_Example-dummy.m */; };
-		496FBAE4132DD6BAE6CB03178FE477F3 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1862C9F8829E51815E7CDC61D15BFF /* ReplaceMe.swift */; };
 		50113FA0BF45DBF8BFE8A7EC98A9EF33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		57AF12D5F0570658AE04A254F130A88D /* LoadingButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 710B54A76C960FFB20FC0E72E974712C /* LoadingButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BABAE70546F3B2C94F484CCFE3A13354 /* LoadingButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 430677A5C7DE13D8CB49420122851F69 /* LoadingButton-dummy.m */; };
 		C5C9D5C635D23DC2E7971E1C4DED87DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		D07E9C717308A6D020AF61822D464EFE /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C79EC02E13273B7FA74461058B28A /* LoadingButton.swift */; };
 		DF2BB05F4E853D60D151D216BF286684 /* Pods-LoadingButton_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3759EEEFD721AAEFA040624DE182A1 /* Pods-LoadingButton_Tests-dummy.m */; };
 		E3E8482ECAA41478672394C6B2B5B23E /* Pods-LoadingButton_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7129866EB42ECA5D8E7ABC76B631F880 /* Pods-LoadingButton_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4A2BDBE70FC81EE3065D9144B52A95F /* Pods-LoadingButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 062FBB53967B04BE74CC9AA53660E7BC /* Pods-LoadingButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,8 +59,8 @@
 		DBB3955DD58A32589D55A1B4C0AE6CF8 /* Pods-LoadingButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoadingButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBD1AB9AB4BC2684EEB6F54FFF00B0D3 /* LoadingButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoadingButton-prefix.pch"; sourceTree = "<group>"; };
 		E76FD14FCFDBDE816733486D57B0CBB0 /* Pods-LoadingButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LoadingButton_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EA1862C9F8829E51815E7CDC61D15BFF /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		F6A2D454B6E198367D00BA30820F549B /* Pods_LoadingButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoadingButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83C79EC02E13273B7FA74461058B28A /* LoadingButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		FD74BD1092447DE2745B96A878E72B73 /* Pods-LoadingButton_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LoadingButton_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +113,7 @@
 		21515E3A145D778593B12771B50FACD5 /* LoadingButton */ = {
 			isa = PBXGroup;
 			children = (
-				687BB21A8C62241CD0C94EDB66BC3118 /* Classes */,
+				5C99924E20E13C84BCC57160C38DA029 /* Classes */,
 			);
 			path = LoadingButton;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 			path = "Example/Pods/Target Support Files/LoadingButton";
 			sourceTree = "<group>";
 		};
-		687BB21A8C62241CD0C94EDB66BC3118 /* Classes */ = {
+		5C99924E20E13C84BCC57160C38DA029 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EA1862C9F8829E51815E7CDC61D15BFF /* ReplaceMe.swift */,
+				F83C79EC02E13273B7FA74461058B28A /* LoadingButton.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0283155BB02E1575E3ABC9CE4B4A374F /* Build configuration list for PBXNativeTarget "LoadingButton" */;
 			buildPhases = (
-				20AF3C6B295A745CEF72270694CBCE95 /* Sources */,
+				63A24E0182B44F94E993307F4E12719B /* Sources */,
 				4BB0ACA117554200366261919ABBD139 /* Frameworks */,
 				2762C823B1029965F3432021311C4E18 /* Headers */,
 			);
@@ -333,20 +333,20 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		20AF3C6B295A745CEF72270694CBCE95 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F56F7242CC7152E1D59527BAA471ADC /* LoadingButton-dummy.m in Sources */,
-				496FBAE4132DD6BAE6CB03178FE477F3 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		634027D585D96BF2E63AC73DB63D7C24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DF2BB05F4E853D60D151D216BF286684 /* Pods-LoadingButton_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63A24E0182B44F94E993307F4E12719B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BABAE70546F3B2C94F484CCFE3A13354 /* LoadingButton-dummy.m in Sources */,
+				D07E9C717308A6D020AF61822D464EFE /* LoadingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

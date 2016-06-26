@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import LoadingButton
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet var loginButton: LoadingButton!
+    @IBOutlet var signupButton: LoadingButton!
+      override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loginButton.indicatorAlignment = .Right
+        loginButton.loadingText = "Authenticating "
+        loginButton.indicatorColor = UIColor.redColor()
+        
+        
+        signupButton.indicatorAlignment = .Left
+        signupButton.loadingText = "Please wait"
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,5 +30,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func actionLogin(sender: AnyObject) {
+        loginButton.loading = true
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 3 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.loginButton.loading = false
+            //put your code which should be executed with a delay here
+        }
+        
+    }
+
+    @IBAction func actionSignUp(sender: AnyObject) {
+        
+        signupButton.loading = true
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.signupButton.loading = false
+            //put your code which should be executed with a delay here
+        }
+    }
 }
 
