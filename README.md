@@ -9,7 +9,9 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Preview
+
+![Loading Buuton Preview](https://raw.githubusercontent.com/SeptiyanAndika/LoadingButton/master/preview/loading-button.gif)
 
 ## Installation
 
@@ -19,7 +21,42 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "LoadingButton" 
 ```
+## Properties
+```swift
+var loading:Bool 
 
+example :
+loginButton.loading = true
+loginButton.loading = false
+```
+ * start and stop loading button
+ 
+
+```swift
+var indicatorAlignment:ActivityIndicatorAlignment
+
+example :
+loginButton.indicatorAlignment = .Right
+signupButton.indicatorAlignment = .Left
+```
+ * Set position ActivityIndicator in left or right title
+ 
+```swift
+var loadingText:String
+
+example :
+loginButton.loadingText = "Authenticating "
+```
+ * Text for title label when activity indicator is animating / loading
+ 
+```swift
+var indicatorColor:UIColor
+
+example :
+loginButton.indicatorColor = UIColor.redColor()
+```
+ * The color of the activity indicator
+ 
 ## Author
 
 Septiyan Andika Isanta, septiyan.andika@gmail.com
