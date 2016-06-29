@@ -74,6 +74,7 @@ public class LoadingButton: UIButton {
     
     func realoadView() {
         if(loading){
+            self.enabled = false
             activityIndicatorView.hidden = false;
             activityIndicatorView.startAnimating()
             if(self.loadingText != nil ){
@@ -81,6 +82,7 @@ public class LoadingButton: UIButton {
                 
             }
         }else{
+            self.enabled = true
             activityIndicatorView.stopAnimating()
             self.setTitle(normalText, forState: .Normal)
             
