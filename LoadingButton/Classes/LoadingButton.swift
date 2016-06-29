@@ -40,7 +40,7 @@ public class LoadingButton: UIButton {
     public var normalText:String? = nil {
         didSet {
             if(normalText == nil){
-                normalText = (self.titleLabel?.text)!
+                normalText = self.titleLabel?.text
             }
             
             self.titleLabel?.text = normalText
