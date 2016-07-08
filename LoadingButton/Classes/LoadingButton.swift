@@ -136,6 +136,11 @@ public class LoadingButton: UIButton {
 
         }
     }
+
+    deinit {
+        activityIndicatorView.removeFromSuperview()
+        activityIndicatorView = nil
+    }
     
     /*
     // Only override drawRect: if you perform custom drawing.
