@@ -16,7 +16,7 @@ public enum ActivityIndicatorAlignment: Int {
 
 public class LoadingButton: UIButton {
     
-    let activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    lazy var activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
    
     public var indicatorAlignment:ActivityIndicatorAlignment = ActivityIndicatorAlignment.Right {
         didSet {
