@@ -16,7 +16,7 @@ public enum ActivityIndicatorAlignment: Int {
 
 public class LoadingButton: UIButton {
     
-    let activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    lazy var activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
    
     public var indicatorAlignment:ActivityIndicatorAlignment = ActivityIndicatorAlignment.Right {
         didSet {
@@ -40,7 +40,7 @@ public class LoadingButton: UIButton {
     public var normalText:String? = nil {
         didSet {
             if(normalText == nil){
-                normalText = (self.titleLabel?.text)!
+                normalText = self.titleLabel?.text
             }
             
             self.titleLabel?.text = normalText
@@ -74,6 +74,7 @@ public class LoadingButton: UIButton {
     
     func realoadView() {
         if(loading){
+            self.enabled = false
             activityIndicatorView.hidden = false;
             activityIndicatorView.startAnimating()
             if(self.loadingText != nil ){
@@ -81,6 +82,7 @@ public class LoadingButton: UIButton {
                 
             }
         }else{
+            self.enabled = true
             activityIndicatorView.stopAnimating()
             self.setTitle(normalText, forState: .Normal)
             
@@ -133,6 +135,11 @@ public class LoadingButton: UIButton {
             NSLayoutConstraint.activateConstraints([topContraints!,leftContraints!,widthContraints!,bottomContraints!])
 
         }
+    }
+
+    deinit {
+        activityIndicatorView.removeFromSuperview()
+        activityIndicatorView = nil
     }
     
     /*
