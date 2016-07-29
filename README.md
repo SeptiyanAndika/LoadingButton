@@ -14,13 +14,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ![Loading Buuton Preview](https://raw.githubusercontent.com/SeptiyanAndika/LoadingButton/master/preview/loading-button.gif)
 
 ## Installation
+1. Just add LoadingButton.swift file to your project,  file are present inside LoadingButton/Classes directory.
 
-LoadingButton is available through [CocoaPods](http://cocoapods.org). To install
+2. LoadingButton is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "LoadingButton" 
 ```
+
+
 ## Properties
 ```swift
 var loading:Bool 

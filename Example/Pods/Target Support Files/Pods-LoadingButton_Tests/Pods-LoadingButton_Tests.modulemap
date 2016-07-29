@@ -1,6 +1,0 @@
-framework module Pods_LoadingButton_Tests {
-  umbrella header "Pods-LoadingButton_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

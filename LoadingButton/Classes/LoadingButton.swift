@@ -47,7 +47,7 @@ public class LoadingButton: UIButton {
         }
     }
     
-    public var loadingText:String?
+    public var loadingText:String? = "Please Wait"
     
     var topContraints:NSLayoutConstraint?
     var bottomContraints:NSLayoutConstraint?
@@ -60,9 +60,16 @@ public class LoadingButton: UIButton {
         setupView()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+    }
+    
+    public override func setTitle(title: String?, forState state: UIControlState) {
+        super.setTitle(title, forState: state)
+        if normalText == nil{
+            normalText = title
+        }
     }
     
     func setupView() {
@@ -79,12 +86,12 @@ public class LoadingButton: UIButton {
             activityIndicatorView.startAnimating()
             if(self.loadingText != nil ){
                   self.setTitle(loadingText, forState: .Normal)
-                
             }
         }else{
             self.enabled = true
             activityIndicatorView.stopAnimating()
             self.setTitle(normalText, forState: .Normal)
+           
             
         }
       
