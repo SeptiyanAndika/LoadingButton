@@ -5,16 +5,18 @@
 [![License](https://img.shields.io/cocoapods/l/LoadingButton.svg?style=flat)](http://cocoapods.org/pods/LoadingButton)
 [![Platform](https://img.shields.io/cocoapods/p/LoadingButton.svg?style=flat)](http://cocoapods.org/pods/LoadingButton)
 
+## Preview
+
+<p align="center">
+  <img src="preview/loading-button.gif" width="280"/>
+</p>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Preview
-
-![Loading Buuton Preview](https://raw.githubusercontent.com/SeptiyanAndika/LoadingButton/master/preview/loading-button.gif)
-
 ## Installation
-1. Just add LoadingButton.swift file to your project,  file are present inside LoadingButton/Classes directory.
+1. Just add `LoadingButton.swift` file to your project (`LoadingButton/Classes/LoadingButton.swift`).
 
 2. LoadingButton is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -24,41 +26,28 @@ pod "LoadingButton"
 ```
 
 
-## Properties
-```swift
-var loading:Bool 
+## Options
+* Start and stop loading button
+    ```swift
+    loginButton.loading = true
+    loginButton.loading = false
+    ```
 
-example :
-loginButton.loading = true
-loginButton.loading = false
-```
- * start and stop loading button
- 
+* Set position of ActivityIndicator
+    ```swift
+    loginButton.indicatorAlignment = .Right
+    signupButton.indicatorAlignment = .Left
+    ```
 
-```swift
-var indicatorAlignment:ActivityIndicatorAlignment
+* Text for title label when activity indicator is animating / loading
+    ```swift
+    loginButton.loadingText = "Authenticating"
+    ```
 
-example :
-loginButton.indicatorAlignment = .Right
-signupButton.indicatorAlignment = .Left
-```
- * Set position ActivityIndicator in left or right title
- 
-```swift
-var loadingText:String
-
-example :
-loginButton.loadingText = "Authenticating "
-```
- * Text for title label when activity indicator is animating / loading
- 
-```swift
-var indicatorColor:UIColor
-
-example :
-loginButton.indicatorColor = UIColor.redColor()
-```
- * The color of the activity indicator
+* The color of the activity indicator
+    ```swift
+    loginButton.indicatorColor = UIColor.redColor()
+    ```
  
 ## Author
 
