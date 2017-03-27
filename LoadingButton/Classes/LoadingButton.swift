@@ -16,22 +16,22 @@ public enum ActivityIndicatorAlignment: Int {
 
 public class LoadingButton: UIButton {
     
-    lazy var activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-   
+    let activityIndicatorView:UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
     public var indicatorAlignment:ActivityIndicatorAlignment = ActivityIndicatorAlignment.Right {
         didSet {
-           setupPositionIndicator()
+            setupPositionIndicator()
         }
     }
     
     
     public var loading:Bool = false {
         didSet {
-           realoadView()
+            realoadView()
         }
     }
     
-    public var indicatorColor:UIColor = UIColor.lightGrayColor() {
+    public var indicatorColor:UIColor = UIColor.lightGray {
         didSet {
             activityIndicatorView.color = indicatorColor
         }
@@ -60,17 +60,18 @@ public class LoadingButton: UIButton {
         setupView()
     }
     
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
     
-    public override func setTitle(title: String?, forState state: UIControlState) {
-        super.setTitle(title, forState: state)
+    public override func setTitle(_ title: String?, for state: UIControlState) {
+        super.setTitle(title, for: state)
         if normalText == nil{
             normalText = title
         }
     }
+    
     
     func setupView() {
         activityIndicatorView.hidesWhenStopped = true;
@@ -81,80 +82,79 @@ public class LoadingButton: UIButton {
     
     func realoadView() {
         if(loading){
-            self.enabled = false
-            activityIndicatorView.hidden = false;
+            self.isEnabled = false
+            activityIndicatorView.isHidden = false;
             activityIndicatorView.startAnimating()
             if(self.loadingText != nil ){
-                  self.setTitle(loadingText, forState: .Normal)
+                self.setTitle(loadingText, for: .normal)
+                
             }
         }else{
-            self.enabled = true
+            self.isEnabled = true
             activityIndicatorView.stopAnimating()
-            self.setTitle(normalText, forState: .Normal)
-           
+            self.setTitle(normalText, for: .normal)
             
         }
-      
+        
     }
     
     func setupPositionIndicator()  {
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         if(topContraints==nil){
             topContraints = NSLayoutConstraint(item: activityIndicatorView, attribute:
-            .Top, relatedBy: .Equal, toItem: self,
-                  attribute: NSLayoutAttribute.Top, multiplier: 1.0,
-                  constant: 0)
+                .top, relatedBy: .equal, toItem: self,
+                      attribute: NSLayoutAttribute.top, multiplier: 1.0,
+                      constant: 0)
         }
         
         if(bottomContraints==nil){
             bottomContraints = NSLayoutConstraint(item: activityIndicatorView, attribute:
-            .Bottom, relatedBy: .Equal, toItem: self,
-                     attribute: NSLayoutAttribute.Bottom, multiplier: 1.0,
-                     constant: 0)
+                .bottom, relatedBy: .equal, toItem: self,
+                         attribute: NSLayoutAttribute.bottom, multiplier: 1.0,
+                         constant: 0)
         }
         
         if(widthContraints==nil){
             widthContraints = NSLayoutConstraint(item: activityIndicatorView, attribute:
-                .Width, relatedBy: .Equal, toItem: nil,
-                        attribute: .Width, multiplier: 1.0,
+                .width, relatedBy: .equal, toItem: nil,
+                        attribute: .width, multiplier: 1.0,
                         constant: 30)
         }
         
         if(rightContraints==nil){
             rightContraints = NSLayoutConstraint(item: activityIndicatorView, attribute:
-                .TrailingMargin, relatedBy: .Equal, toItem: self,
-                                 attribute: .TrailingMargin, multiplier: 1.0,
+                .trailingMargin, relatedBy: .equal, toItem: self,
+                                 attribute: .trailingMargin, multiplier: 1.0,
                                  constant: 0)
         }
         
         if(leftContraints==nil){
             leftContraints = NSLayoutConstraint(item: activityIndicatorView, attribute:
-                .Leading, relatedBy: .Equal, toItem: self,
-                          attribute: .Leading, multiplier: 1.0,
+                .leading, relatedBy: .equal, toItem: self,
+                          attribute: .leading, multiplier: 1.0,
                           constant: 0)
         }
         
         if(indicatorAlignment == .Right ){
-            NSLayoutConstraint.deactivateConstraints([leftContraints!])
-            NSLayoutConstraint.activateConstraints([topContraints!,rightContraints!,widthContraints!,bottomContraints!])
+            NSLayoutConstraint.deactivate([leftContraints!])
+            NSLayoutConstraint.activate([topContraints!,rightContraints!,widthContraints!,bottomContraints!])
         }else{
-            NSLayoutConstraint.deactivateConstraints([rightContraints!])
-            NSLayoutConstraint.activateConstraints([topContraints!,leftContraints!,widthContraints!,bottomContraints!])
-
+            NSLayoutConstraint.deactivate([rightContraints!])
+            NSLayoutConstraint.activate([topContraints!,leftContraints!,widthContraints!,bottomContraints!])
+            
         }
     }
-
+    
     deinit {
         activityIndicatorView.removeFromSuperview()
-        activityIndicatorView = nil
     }
     
     /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override drawRect: if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func drawRect(rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }
